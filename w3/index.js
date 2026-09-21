@@ -46,8 +46,11 @@ app.get("/", (req, res) =>
   })
 );
 
-app.use("/api/v1/contoh", contohRouter);
-app.use("/api/v1/buku", bukuRouter);
+const apiRouter = require('./src/routes/index');
+app.use('/api/v1', apiRouter);
+
+// app.use("/api/v1/contoh", contohRouter);
+// app.use("/api/v1/buku", bukuRouter);
 
 /* ------------------------------------------------------------------ */
 /* 3. PENANGKAP DI PALING BAWAH                                        */

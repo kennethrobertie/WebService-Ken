@@ -1,11 +1,12 @@
-/**
- * Satu pintu ekspor untuk semua router.
- * Tanpa file ini, index.js penuh require satu per satu.
- */
-const contohRouter = require("./contoh");
-const bukuRouter = require("./buku");
+const express = require("express");
+const router = express.Router();
 
-module.exports = {
-  contohRouter,
-  bukuRouter,
-};
+const kendaraanRouter = require("./kendaraan");
+const pelangganRouter = require("./pelanggan");
+const transaksiRouter = require("./transaksi");
+
+router.use("/kendaraan", kendaraanRouter);
+router.use("/pelanggan", pelangganRouter);
+router.use("/transaksi", transaksiRouter);
+
+module.exports = router;

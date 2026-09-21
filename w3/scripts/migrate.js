@@ -46,11 +46,11 @@ const main = async () => {
     );
     await koneksi.query(`USE \`${DB_NAME}\``);
 
-    console.log("[migrate] Menjalankan sql/schema.sql...");
-    await koneksi.query(bacaSql("schema.sql"));
+    console.log("[migrate] Menjalankan sql/schema-rental.sql...");
+    await koneksi.query(bacaSql("schema-rental.sql"));
 
-    console.log("[migrate] Menjalankan sql/seed.sql...");
-    await koneksi.query(bacaSql("seed.sql"));
+    console.log("[migrate] Menjalankan sql/seed-rental.sql...");
+    await koneksi.query(bacaSql("seed-rental.sql"));
 
     console.log("[migrate] Selesai. Database siap dipakai.");
   } finally {
